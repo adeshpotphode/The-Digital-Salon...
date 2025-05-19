@@ -1,0 +1,27 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 50px;
+}
+
+/* Styling Links */
+a {
+    display: block;
+    width: 300px;
+    margin: 10px auto;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: #0056b3;
+}

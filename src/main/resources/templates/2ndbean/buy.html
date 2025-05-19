@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/2ndbean/buy.css">
+    <title>Buy Product</title>
+</head>
+<body>
+        <!-- ----- = = = = = = = header = = =  = = = ----- -->
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="/img/logo.png" alt="image not found"></a>
+                <h2>The Glamour Salon <span><br> hair & Beauty</span></h2>
+            </div>
+            <ul>
+                <li><a href="Services">SERVICES</a></li>
+                <li><a href="Academy">ACADEMY</a></li>
+                <li><a href="Franchise">FRANCHISE</a></li>
+            </ul>
+            <div>
+                <a href="Appointment" class="shop">Contact US - Booking Seat</a>
+                <a href="Shop" class="shop" target="_blank" rel="noopener noreferrer">Salon Product - Shop Now</a>
+            </div>
+        </nav>
+    </div> <!-- ----- = = = = = = = header = = =  = = = ----- -->
+
+    <div class="main-container">            
+        <div class="product-summary">
+            <h2>Product Summary</h2>
+                <p><strong>Product:</strong> <span id="product-name"></span></p>
+                <p><strong>Quantity:</strong> <span id="product-quantity"></span></p>
+                <p><strong>Price per unit:</strong> ₹<span id="product-price"></span></p>
+                <p><strong>Total:</strong> ₹<span id="total-price"></span></p>
+                <button onclick="alert('Order Placed Successfully!')">Place Order</button>
+        </div>
+
+        <!-- = = = = = form-container = = = = = -->
+        <div class="form-container">
+            <form action="#" th:action="@{/SaveBuy}" th:object="${buy}" method="post">
+                <button type="button" class="location-btn">📍 Use my current location</button>
+    
+                <div class="row">
+                    <div><input type="text" th:field="*{name}" placeholder="Name" required></div>
+                    <div><input type="text" th:field="*{contacts}" placeholder="10-digit mobile number" required></div>
+                </div>
+    
+                <div class="row">
+                    <div><input type="text" th:field="*{pincode}" placeholder="Pincode" required></div>
+                    <div><input type="text" th:field="*{locality}" placeholder="Locality" required></div>
+                </div>
+    
+                <input type="text" th:field="*{address}" placeholder="Address (Area and Street)" required>
+    
+                <div class="row">
+                    <div><input type="text" th:field="*{city}" placeholder="City/District/Town" required></div>
+                    <div>
+                        <select th:field="*{state}" required>
+                            <option value="">--Select State--</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <!-- Add more as needed -->
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div><input type="text" th:field="*{landmark}" placeholder="Landmark (Optional)"></div>
+                    <div><input type="text" th:field="*{altPhone}" placeholder="Alternate Phone (Optional)"></div>
+                </div>
+    
+                <input type="hidden" id="product-field" th:field="*{product}">
+                <input type="hidden" id="quantity-field" th:field="*{quantity}">
+                <input type="hidden" id="price-field" th:field="*{price_per_unit}">
+                <input type="hidden" id="total-field" th:field="*{total_price}">
+    
+                <button onclick="alert('Order Placed Successfully!')" type="submit" class="submit-btn">SAVE AND DELIVER HERE</button>
+            </form>
+    
+            <script>
+                const params = new URLSearchParams(window.location.search);
+                const product = params.get("product");
+                const quantity = parseInt(params.get("quantity"));
+                const price = parseFloat(params.get("price"));
+            
+                function formatPrice(amount) {
+                    return amount.toLocaleString("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 2
+                    }).replace("₹", "").trim();
+                }
+            
+                if (!product || isNaN(quantity) || isNaN(price)) {
+                    alert("Invalid product details!");
+                } else {
+                    document.getElementById("product-name").innerText = product;
+                    document.getElementById("product-quantity").innerText = quantity;
+                    document.getElementById("product-price").innerText = formatPrice(price);
+                    document.getElementById("total-price").innerText = formatPrice(price * quantity);
+            
+                    // Hidden fields में value set करना
+                    document.getElementById("product-field").value = product;
+                    document.getElementById("quantity-field").value = quantity;
+                    document.getElementById("price-field").value = price;
+                    document.getElementById("total-field").value = price * quantity;
+                }
+            </script>
+        </div>
+    </div>
+
+    <div class="back-link">
+        <a href="/Shop">← Back to Shop</a>
+    </div>
+</body> 
+</html>

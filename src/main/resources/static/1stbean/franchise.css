@@ -1,0 +1,636 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: #ada7a7;
+}
+
+
+/* =======  header  ======= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+nav .logo img{
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+    height: 80px;
+}
+
+nav .logo  h2 {
+    margin-top: 15px;
+    font-weight: 400;
+    color: #fff;
+}
+
+nav .logo h2 span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    justify-content: space-between;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+nav .shop {
+    margin-left: 40px;
+    background-color: #007BFF; 
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav .shop:hover {
+    background-color: #007BFF;
+} 
+
+
+/* = = = = = = = = = = Franchise = = = = = =  = = = =  */
+.franchise {
+    padding: 20px;
+    text-align: center;
+    margin: 60px auto;
+    max-width: 900px;
+}
+  
+  .franchise h3 {
+    font-size: 30px;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+
+/* = = = = = = = Franchise Motive = = = = = ==  =*/
+.franchise-motive {
+  background-color: #c6ced1; 
+  padding: 70px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(60, 55, 55, 0.1); 
+  max-width: 1000px; 
+  margin: 20px auto; 
+  line-height: 1.6;
+}
+
+.franchise-motive h3 {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.franchise-motive h4 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.franchise-motive h5 {
+  font-size: 16px;
+  color: #222;
+  font-weight: normal;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0 10px; 
+}
+
+.franchise-btn{
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 30px auto;
+}
+
+.franchise-btn:hover {
+    background-color: #3b5a7a;
+}
+
+.Join-us {
+    margin-top: 100px;
+    padding: 20px 100px;
+    text-align: center;
+    font-size: 100px;
+    color: rgb(220, 200, 200);
+    font-style: italic;
+}
+
+/* = = = = = =  franchise-container  = = = = = */
+.franchise-container {
+    padding: 100px 20px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.franchise-container h3 {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.franchise-process {
+    background: url('/img/franchise.webp');
+    background-size: cover;
+    height: 1000px;
+    width: 100%;
+    background-position: center;
+    padding: 100px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.franchise-process {
+    display: flex;
+    justify-content: center;
+    gap: 500px;
+    margin-top: 20px;
+}
+
+.process-1, .process-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 150px;
+}
+
+.process-1 a {
+    text-decoration: none;
+}
+
+h4 {
+    margin-top: 50px;
+    background-color: #4e7197; 
+    padding: 15px 50px;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    font-weight: bold;
+    color: #000;
+    font-size: 20px;
+}
+
+.in {
+    color: #4d4d4d;
+    margin-top: 100px;
+    padding: 20px 100px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.in span {
+    color: #4e7197; 
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+/* = = = = = = = = = franchise-script = = = = = = = = */
+.franchise-script {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 40px;
+    background-color: #aecae4;
+    margin-bottom: 30px;
+}
+
+.franchise-script-img-1, .franchise-script-img-2 {
+    flex: 1;
+    text-align: center;
+}
+
+.franchise-script-img-1 img,
+.franchise-script-img-2 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.franchise-script-msg {
+    flex: 2;
+    text-align: center;
+    padding: 20px;
+}
+
+.franchise-script-msg h3 {
+    font-size: 30px;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.franchise-script-msg p {
+    font-size: 18px;
+    color: #000;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.franchise-script-msg button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.franchise-script-msg button:hover {
+    background-color: #3b5a7a;
+}
+
+.business {
+    margin: 100px ;
+    text-align: center;
+    font-size: 100px;
+    padding: 20px 100px;
+    color: rgb(220, 200, 200);
+    font-style: italic;
+}
+
+/* = = = = = = = = our-franchise = = = = = = = */
+.our-franchise {
+    text-align: center;
+    padding: 40px;
+    margin: 50px auto;
+}
+
+.our-franchise h3 {
+    font-size: 35px;
+    color: #000;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.franchise-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.franchise-item {
+    padding: 15px;
+    text-align: center;
+    width: 280px;
+}
+
+.franchise-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.franchise-item p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* = = = = = = = = = offerings-container = = = = = = = = */
+.offerings-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+    margin-top: 70px;
+}
+
+.Offerings, .offerings-img, .offerings-services {
+    padding: 20px;
+    text-align: center;
+}
+
+.Offerings h3 {
+    font-size: 30px;
+    color: #000;
+    background-color: #4e7197;
+    margin-bottom: 15px;
+}
+
+.Offerings p {
+    font-size: 18px;
+    color: #000;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.Offerings span {
+    font-weight: bold;
+    color: #2d6097;
+    font-size: 20px;
+}
+
+.offerings-img img {
+    width: 100%;
+    height: auto;
+}
+
+.offerings-services h5 {
+    background-color: #4e7197;
+    font-size: 20px;
+    color: #000;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.offerings-meeting h5 {
+    text-align: center;
+    font-size: 100px;
+    padding: 20px 10px;
+    color: rgb(220, 200, 200);
+    font-style: italic;
+}
+
+/* = = = = = = = =  franchise-taker = = = = = = = =  */
+.franchise-taker {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 30px 0;
+    padding: 20px;
+}
+
+.franchise-taker-img img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.franchise-taker-speech {
+    max-width: 800px;
+    padding: 15px;
+    
+}
+
+.franchise-taker-speech p {
+    font-size: 17px;
+    color: #000;
+    line-height: 1.5;
+}
+
+.franchise-taker-speech span {
+    display: block;
+    margin-top: 10px;
+    color: #4e7197;
+} 
+/* = = = = = = = = = franchise-apply = = = = = = = = */
+.franchise-apply {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 200px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.franchise-apply-img {
+    text-align: center;
+    flex: 1;
+    max-width: 600px;
+    background-color: #4e7197;
+    padding: 47px 20px;
+}
+
+.franchise-apply-img img {
+    width: 100%;
+    height: auto;
+}
+
+.franchise-apply-img h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.franchise-apply-form {
+    flex: 2;
+    background: #fff;
+    padding: 20px;
+    max-width: 600px;
+}
+
+.franchise-apply-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.franchise-apply-form input,
+.franchise-apply-form select,
+.franchise-apply-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.franchise-apply-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.franchise-apply-form input[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.franchise-apply-form input[type="submit"]:hover {
+    background: #0056b3;
+}
+
+
+/* = = = = = = = = = = FOOTER = = = = = = = = = =*/
+.footer {
+    background-color: black;
+    color: white; 
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info, .footer-contact, .footer-social {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+    text-align: left;
+}
+
+.footer-info h3, .footer-contact h3, .footer-social h3 {
+    color: white; 
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.footer-info p, .footer-contact p, .footer a {
+    color: #c2cad3; 
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline; 
+}
+
+.footer-newsletter {
+    text-align: left;
+    max-width: 400px;
+    margin: auto;
+}
+
+.footer-newsletter h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-newsletter input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-newsletter button {
+    width: 40%;
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.footer-newsletter button:hover {
+    background: #0056b3;
+}
+
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline;
+    margin: 0 10px;
+    font-size: xx-large ;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9em;
+    border-top: 1px solid #8b5b29;
+    padding-top: 15px;
+}
+
+.our-top-services {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.our-top-services h3 {
+    margin-bottom: 15px;
+}
+
+.our-top-services img {
+    width: 100px; 
+    height: 100px;
+    object-fit: contain;
+    margin: 0 20px; 
+}
+
+.our-top-services h5 {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+/* Flexbox for side-by-side images */
+.our-top-services .our-top-services-images {
+    display: flex;
+    justify-content: start;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.footer-bottom p {
+    font-weight: 300;
+    color: white;
+}

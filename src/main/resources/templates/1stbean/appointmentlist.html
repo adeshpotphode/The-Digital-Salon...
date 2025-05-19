@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Glamour Salon - Website</title>
+    <link rel="stylesheet" href="/1stbean/appointmentlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <a href="AdminPage"><button class="for-admin">Go to Admin page</button></a>
+    <div class="header">
+        <h3 class="head">All Customer List</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Contacts</th>
+                    <th>Email</th>
+                    <th>OurService</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>Message</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="salon:${allSalonList}">
+                    <td th:text="${salon.name}"></td>
+                    <td th:text="${salon.contact}"></td>
+                    <td th:text="${salon.email}"></td>
+                    <td th:text="${salon.ourService}"></td>
+                    <td th:text="${salon.appointmentDate}"></td>
+                    <td th:text="${salon.appointmentTime}"></td>
+                    <td th:text="${salon.message}"></td>
+                    <td> <a th:href="@{/ShowUpdateForm/{id}(id=${salon.id})}"><i class="fa-solid fa-pencil"></i></a>
+                         <a th:href="@{/Delete/{id}(id=${salon.id})}"><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

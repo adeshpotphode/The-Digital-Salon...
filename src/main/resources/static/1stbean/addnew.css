@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+/* =======  header  ======= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+nav .logo img{
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+    height: 80px;
+}
+
+nav .logo  h2 {
+    margin-top: 15px;
+    font-weight: 400;
+    color: #fff;
+}
+
+nav .logo h2 span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    justify-content: space-between;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+nav .shop {
+    margin-left: 40px;
+    background-color: #007BFF; 
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav .shop:hover {
+    background-color: #007BFF;
+} 
+
+.appointment-image {
+    background: url('/img/appointment.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 50px 50px; */
+    overflow: hidden;
+}
+
+.appointment-image a {
+    text-decoration: none;
+}
+
+.appointment-image h3 {
+    font-size: 100px;
+    /* margin-top: 500px; */
+    margin: 50px 50px;
+    text-align: center;
+    position: sticky;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    /* transform: translate(0%, 50%); */
+    /* margin-top: 100px; */
+    /* position: sticky; */
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 3px #93ff10;
+    font-weight: 900;
+    filter: drop-shadow(0 0 10px #ff5151) ;
+    text-transform: uppercase;
+    white-space:wrap;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      filter: invert(100%);
+      transition: all 0.3s ease-in-out;
+    }
+        }
+
+
+.container {
+    background: url('/img/Salon2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.main {
+    max-width: 700px;
+    margin-top: 100px;
+    background-color: rgb(215, 197, 197);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main h3 {
+    text-align: center;
+    color: #000;
+    font-size: 30px;
+}
+/* .main:hover{
+   background: rgba(0, 0, 0, 0.371);
+} */
+
+.header {
+    text-align: center;
+    position: relative;
+    
+}
+
+.header h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.sign, select, .date, .time, .msg {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.google-button {
+    background-color: #007BFF;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 15px 0;
+}
+
+.google-button i {
+    margin-right: 10px;
+}
+
+.or {
+    text-align: center;
+    margin: 15px 0;
+}
+
+
+
+#back, #cross {
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+    color: #333;
+    cursor: pointer;
+}
+
+#back {
+    left: 15px;
+}
+
+#cross {
+    right: 15px;
+}
+
+p span {
+    color: #007bff;
+    cursor: pointer;
+}
+
+p span:hover {
+    text-decoration: underline;
+}
+
+
+/* = = = = = = = = = = FOOTER = = = = = = = = = =*/
+.footer {
+    background-color: black;
+    color: white; 
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info, .footer-contact, .footer-social {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+    text-align: left;
+}
+
+.footer-info h3, .footer-contact h3, .footer-social h3 {
+    color: white; 
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.footer-info p, .footer-contact p, .footer a {
+    color: #c2cad3; 
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline; 
+}
+
+.footer-newsletter {
+    text-align: left;
+    max-width: 400px;
+    margin: auto;
+}
+
+.footer-newsletter h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-newsletter input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-newsletter button {
+    width: 40%;
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.footer-newsletter button:hover {
+    background: #0056b3;
+}
+
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline;
+    margin: 0 10px;
+    font-size: xx-large ;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9em;
+    border-top: 1px solid #8b5b29;
+    padding-top: 15px;
+}
+
+.our-top-services {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.our-top-services h3 {
+    margin-bottom: 15px;
+}
+
+.our-top-services img {
+    width: 100px; 
+    height: 100px;
+    object-fit: contain;
+    margin: 0 20px; 
+}
+
+.our-top-services h5 {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+/* Flexbox for side-by-side images */
+.our-top-services .our-top-services-images {
+    display: flex;
+    justify-content: start;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.footer-bottom p {
+    font-weight: 300;
+    color: white;
+}

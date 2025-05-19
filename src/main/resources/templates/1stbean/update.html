@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Data</title>
+    <link rel="stylesheet" href="/1stbean/update.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div>
+        <h1>You can Update your Booking</h1>
+        <hr>
+        <h3>Data Update</h3>
+        <form action="#" th:action="@{/Save}" th:object="${salon}" method="post">
+            <input type="hidden" th:field="*{id}">
+            
+            <input type="text" th:field="*{name}" class="list" required placeholder="Enter Name">
+            <input type="text" th:field="*{contact}" class="list" required placeholder="Enter Contact Number">
+            <input type="text" th:field="*{email}" class="list" required placeholder="Enter Email Id">
+            
+            <select name="Service" th:field="*{ourService}" class="list" required>
+                <option value="Hair cutting">Hair Cutting</option>
+                <option value="Hair coloring">Hair Coloring & Highlights</option>
+                <option value="Beard shaping and trimming">Beard Shaping and Trimming</option>
+                <option value="Mustache shaping">Mustache Shaping & Trimming</option>
+                <option value="Facials">Facials</option>
+                <option value="Skin-lightening bleaches">Skin-lightening bleaches</option>
+                <option value="Waxing">Waxing</option>
+            </select>
+            
+            <input type="date" class="date list" th:field="*{appointmentDate}" required>
+            <input type="time" class="time list" th:field="*{appointmentTime}" required>
+            
+            <textarea name="message" th:field="*{message}" class="msg list" placeholder="Enter Message"></textarea>
+            
+            <button type="submit" class="button">Update</button>
+        </form>
+    </div>
+</body>
+</html>

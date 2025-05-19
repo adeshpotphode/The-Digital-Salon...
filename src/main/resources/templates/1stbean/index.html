@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Glamour Salon - Website</title>
+    <link rel="stylesheet" href="/1stbean/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <!-- ----- = = = = = = = header = = =  = = = ----- -->
+<div class="header">
+    <nav>
+        <div class="logo">
+            <a href="/"><img src="/img/logo.png" alt="image not found"></a>
+            <h2>The Glamour Salon <span><br> hair & Beauty</span></h2>
+        </div>
+            
+        
+        <ul>
+            <li><a href="Services">SERVICES</a></li>
+            <li><a href="Academy">ACADEMY</a></li>
+            <li><a href="Franchise">FRANCHISE</a></li>
+        </ul>
+        <div>
+            <a href="Appointment" class="shop">Contact US - Booking Seat</a>
+            <a href="Shop" class="shop" target="_blank" rel="noopener noreferrer">Salon Product - Shop Now</a>
+        </div>
+    </nav>
+</div> <!-- ----- = = = = = = = header = = =  = = = ----- -->
+
+
+    <!-- <div class="introduction">
+        <video autoplay muted loop>
+            <source src="/video/salon-intro.mp4" type="video/mp4">
+        </video>
+    </div> -->
+
+
+    <a href="AddNew"><button class="contact">Contact Us</button></a>
+     
+
+    <div class="features-container">
+        <div class="features-list">
+            <button class="feature active" data-target="slide1">Overview</button>
+            <button class="feature" data-target="slide2">Reviews</button>
+            <button class="feature" data-target="slide3">Photos</button>
+            <button class="feature" data-target="slide4">All Blogs</button>
+        </div>
+
+<hr><hr>
+
+        <div class="features-content">
+            <div id="slide1" class="slide active">
+                <h2>Welcome to Our Hair & Beauty Studio</h2>
+                <p>At our salon, we believe beauty is an art, and you deserve to feel confident and stylish every day. 
+                   We provide a range of professional services, from haircuts and styling to skin rejuvenation and grooming.</p>
+                
+                <div class="overview-content">
+                    <div class="overview-item">
+                        <h3>Why Choose Us?</h3>
+                        <p>✔ Expert stylists and beauty professionals</p>
+                        <p>✔ High-quality products and treatments</p>
+                        <p>✔ Personalized care tailored to your needs</p>
+                    </div>
+                    <div class="overview-item">
+                        <h3>Our Commitment</h3>
+                        <p>We are committed to providing top-notch beauty services that enhance your confidence and style. 
+                           Step into our salon and leave feeling refreshed, radiant, and empowered.</p>
+                    </div>
+                    <div class="overview-time">
+                        <h3>Opening Hours</h3>
+                        <p>Monday - Friday: 10:00 AM - 8:00 PM</p>
+                        <p>Saturday: 10:00 AM - 6:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+                
+                <a href="#services" class="btn">Explore Our Services</a>
+            </div> <!-- =====   slide1   ===== -->
+            
+            <div id="slide2" class="slide">
+                <div class="reviews" id="reviews">
+                    <h2>Customer Reviews & Ratings</h2>
+                    <div id="reviewList">
+                        <p>No reviews yet. Be the first to leave a review!</p>
+                    </div>
+                    <form id="reviewForm">
+                        <input type="text" id="reviewerName" placeholder="Your Name" required><br>
+                        <div class="star-rating">
+                            <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
+                            <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
+                            <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
+                            <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
+                            <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
+                        </div><br>
+                        <textarea id="reviewText" placeholder="Your Review" required></textarea><br>
+                        <button type="submit">Submit Review</button>
+                    </form>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const reviewForm = document.getElementById("reviewForm");
+                        const reviewList = document.getElementById("reviewList");
+                    
+                        reviewForm.addEventListener("submit", function (event) {
+                            event.preventDefault();
+                    
+                            // Get form values
+                            const name = document.getElementById("reviewerName").value;
+                            const reviewText = document.getElementById("reviewText").value;
+                            const rating = document.querySelector("input[name='rating']:checked");
+                    
+                            if (!rating) {
+                                alert("Please select a star rating.");
+                                return;
+                            }
+                    
+                            // Create new review entry
+                            const reviewItem = document.createElement("div");
+                            reviewItem.classList.add("review-item");
+                    
+                            reviewItem.innerHTML = `
+                                <p><strong>${name}</strong> - ${"★".repeat(rating.value)} (${rating.value} Stars)</p>
+                                <p>${reviewText}</p>
+                                <hr>
+                            `;
+                    
+                            // Append review to the list
+                            if (reviewList.querySelector("p")) {
+                                reviewList.innerHTML = ""; // Clear placeholder text if first review
+                            }
+                            reviewList.appendChild(reviewItem);
+                    
+                            // Clear form fields
+                            reviewForm.reset();
+                        });
+                    
+                        // Star hover effect for better UX
+                        const stars = document.querySelectorAll(".star-rating label");
+                        stars.forEach(star => {
+                            star.addEventListener("mouseover", function () {
+                                const value = this.previousElementSibling.value;
+                                stars.forEach(s => s.style.color = s.previousElementSibling.value <= value ? "gold" : "gray");
+                            });
+                    
+                            star.addEventListener("mouseleave", function () {
+                                const checked = document.querySelector("input[name='rating']:checked");
+                                const checkedValue = checked ? checked.value : 0;
+                                stars.forEach(s => s.style.color = s.previousElementSibling.value <= checkedValue ? "gold" : "gray");
+                            });
+                        });
+                    });
+                </script>
+            </div>  <!-- = = = = slide2 = = = = -->
+
+            <div id="slide3" class="slide">
+                <div class="photos-container">
+                    <div class="Frist-row">
+                        <img src="/img/Blow dryers.jpg" alt="image not found">
+                        <img src="/img/salon-look-2.webp" alt="image not found">
+                        <img src="/img/Salon4.jpg" alt="image not found">
+                    </div>
+                    <div class="Second-row">
+                        <img src="/img/Salon7.jpg" alt="">
+                        <img src="/img/Shampoo backwash units.jpg" alt="">
+                    </div>
+                </div>
+            </div>  <!-- = = = = slide3 = = = = -->
+
+            <div id="slide4" class="slide">
+                <div class="featured-post">
+                    <h2>Featured Post</h2>
+                    <div class="post-preview">
+                        <img src="/img/salon-look.webp" alt="image not found">
+                        <div class="post-details">
+                            <h3>Haircare Tips for Healthy, Shiny Hair</h3>
+                            <p>Learn the best tips to keep your hair shiny and healthy all year round. From deep conditioning treatments to protective hairstyles...</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="latest-posts">
+                    <h2>Latest Posts</h2>
+                    <div class="post-item">
+                        <img src="/img/salon-cut.jpg" alt="image not found">
+                        <div class="post-info">
+                            <h3>How to Maintain Your Hair Color Between Salon Visits</h3>
+                            <p>Discover easy tips for keeping your color vibrant longer with simple at-home care...</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <aside class="sidebar">
+                    <div class="social-links">
+                        <h4>Social Media</h4>
+                        <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#"><i class="fa-regular fa-envelope"></i></a>
+                    </div>
+
+                    <div class="newsletter">
+                        <form action="#" method="post">
+                            <h4>Newsletter</h4>
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>   <!-- = = = slide4 = = = -->
+        </div>  
+    </div>  <!-- = = = = = = = = features-container = = = = = = -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const features = document.querySelectorAll('.feature');
+            const slides = document.querySelectorAll('.slide');
+        
+            features.forEach(feature => {
+                feature.addEventListener('click', () => {
+                    // Remove active class from all features and slides
+                    features.forEach(f => f.classList.remove('active'));
+                    slides.forEach(s => s.classList.remove('active'));
+        
+                    // Add active class to the clicked feature
+                    feature.classList.add('active');
+        
+                    // Show the corresponding slide
+                    const target = feature.getAttribute('data-target');
+                    document.getElementById(target).classList.add('active');
+                });
+            });
+        
+            // 🔥 Ensure only slide1 is active initially
+            slides.forEach(s => s.classList.remove('active')); // Remove active from all
+            document.getElementById('slide1').classList.add('active'); // Set slide1 as active
+        });
+    </script>
+<hr> <hr>
+    <div class="section1">
+        <div class="img1">
+            <img src="img/Salon1.jpg" alt="image not found">
+        </div>
+        <div class="text1">
+            <p>we cut to Indian & western hairstyle based on science and Geometrical systems. Our Salon is lorgest Unisex Salon of own city. This Salon is Established in the year 2000.
+                It has been working to improve your looks and happiness from 24 years. <span>We take pride in Science-based styling, not Product-based one.</span> </p>
+            <div class="button">
+                <button>know more</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section2">
+        <div class="text2">
+            <p>After all, it is all about adopting and following a balanced lifestyle! Being happy is important to look beautiful, healthy, which is more than just a healthy lifestyle. 
+                We believe that smiling is important to have healthy and happy hair! He advises everyone to live a stress-free life and love their hair like a child!</p>
+        </div>
+        <div class="img21">
+            <img src="img/Salon3.jpg" alt="image not found">
+        </div>
+        <div class="img24">
+            <img src="img/Salon6.jpg" alt="image not found">
+            <img src="img/Salon5.jpg" alt="image not found">
+        </div>
+    </div>
+
+    <!-- = = = = = = = Services Section = = = = = = =  -->
+    <div class="section3">
+        <section id="services" class="section-services">
+            <h3>Our Services</h3>
+            <div class="service-container">
+                <div class="service-list">
+                    <div class="service-list-1">
+                        <div class="service-item">
+                            <h4>Hair Cut</h4>
+                            <p>Your life may not be perfect, but ensure your hair & Beauty is!</p>
+                        </div>
+                        <div class="service-item">
+                            <h4>Hair Styling</h4>
+                            <p>Your life may not be perfect, but ensure your hair & Beauty is!</p>
+                        </div>
+                        <div class="service-item">
+                            <h4>Facial</h4>
+                            <p>Your life may not be perfect, but ensure your hair & Beauty is!</p>
+                        </div>
+                        <div class="service-item">
+                            <h4>Beauty & Grooming</h4>
+                            <p>Your life may not be perfect, but ensure your hair & Beauty is!</p>
+                        </div>
+                        <div class="service-item">
+                            <h4>Manicure</h4>
+                            <p>Your life may not be perfect, but ensure your hair & Beauty is!</p>
+                        </div>
+                    </div>
+                    <div class="service-list-2">
+                        <div class="service-item">
+                            <h4>Hair Spa</h4>
+                            <p>Your life may not be perfect, but ensure your hair & Beauty is!</p>
+                        </div><div class="service-item">
+                            <h4>Hair Coloring</h4>
+                            <p>Your life may not be perfect, but ensure your hair & Beauty is!</p>
+                        </div><div class="service-item">
+                            <h4>Skin Rejuvenation</h4>
+                            <p>Your life may not be perfect, but ensure your hair & Beauty is!</p>
+                        </div><div class="service-item">
+                            <h4>Hair Education</h4>
+                            <p>Your life may not be perfect, but ensure your hair & Beauty is!</p>
+                        </div><div class="service-item">
+                            <h4>Pedicure</h4>
+                            <p>Your life may not be perfect, but ensure your hair & Beauty is!</p>
+                        </div>
+                    </div>
+                </div>  
+            </div> <!-- class="service-container" -->
+        </section>
+    </div>
+
+
+    <!-- = = = = = = = = = = salon-name-overlay = = = = = = = =  -->
+    <div class="salon-name-overlay">
+        <h4>The Glamour Salon  <br>  Hair & Beauty</h4>
+    </div>
+
+
+    <!-- = = = = = = = Master Section = = = = = = = -->
+    <div class="master">
+        <h4>Do You Want To <span>Master</span> The Science Of <span>Hair & Beauty?</span></h4>
+        <button>know more</button>
+    </div>
+    
+    <!-- = = = = = =  Our Customer = = = = = = = -->
+    <div class="section4">
+        <h4>Our Customer</h4>
+        <div class="Customer-image">
+            <img src="img/Salon8.jpg" alt="image not found">
+            <h5>Allu Arjun</h5>
+            <p>The Glamour Salon Gives confidence and extra glow.</p>
+        </div>
+
+        <div class="Customer-image">
+            <img src="img/Salon9.jpg" alt="image not found">
+            <h5>Keerthy Suresh</h5>
+            <p>The Glamour Salon Gives confidence and extra glow.</p>
+        </div>
+
+        <div class="Customer-image">
+            <img src="img/Salon10.jpg" alt="image not found">
+            <h5>Harnaaz Kaur Sandhu</h5>
+            <p>The Glamour Salon Gives confidence and extra glow.</p>
+        </div>
+    </div>
+
+
+    <!-- = = = = = = = = = = FOOTER = = = = = = = = = = -->
+    <footer class="footer" id="ab">
+        <div class="footer-container">
+            
+            <div class="footer-info">
+                <h3>About Us</h3>
+                <p>We take care of hair and skin like a baby, giving extra confidence and some more attitude</p>
+                <h3 class="footer__title">Information</h3>
+                <p>Services
+                <br>Academy 
+                <br>Franchise
+                <br>E-appointment
+                <br>E-Shopping
+                <br>Terms and conditions 
+                <br>Privacy policy</p>  
+            </div>
+            <div class="footer-contact">
+                <h3>Address</h3>
+                <p>123, The Glamour Salon, Vijay Nagar, Indore</p>
+                <h3>Contact Us</h3>
+                <p>Phone: (0731) 456-7890</p>
+                <p>Mobile: +91 012 345 6789</p>
+                <p>Email: <a href="mailto:info@theGlamourSalon.com">info@TheGlamourSalon.com</a></p>
+                <div class="our-top-services">
+                    <h3>Our Top Services</h3>
+                    <div class="our-top-services-images">
+                        <div>
+                            <img src="/img/footer-hair.jpeg" alt="image not found">
+                            <h5>Hair</h5>
+                        </div>
+                        <div>
+                            <img src="/img/footer-beauty.jpg" alt="image not found">
+                            <h5>Beauty</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <div class="footer-newsletter">
+                    <form action="#" method="post">
+                        <h3>Newsletter</h3>
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="#facebook.com"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="#twitter.com"><i class="fa-brands fa-square-twitter"></i></a></li>
+                    <li><a href="#youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="#instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
+                <h3>Mobile apps</h3>
+                <ul class="social-icons">
+                    <li><a href="#playstore.com"><i class="fa-brands fa-google-play"></i></a></li>
+                    <li><a href="#appstore.com"><i class="fa-brands fa-apple"></i></a></li>
+                </ul>
+            </div>
+        </div>     <!-- class="footer-container" -->
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 The The Glamour Salon hair & Beauty. All rights reserved.</p>
+        </div>
+     </footer>
+
+</body>
+</html>

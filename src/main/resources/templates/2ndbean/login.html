@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/2ndbean/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>The Glamour Salon - Website</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="cencel-container">
+            <a th:href="@{/Shop}"><i class="fa-solid fa-arrow-left" id="back" style="color: black;"></i></a>
+            <a th:href="@{/Shop}"><i class="fa-solid fa-x" id="cross" style="color: black;"></i></a>
+        </div>
+
+        <h3>Log in</h3>
+        <form action="#">
+            <div class="input-group">
+                <input type="text" placeholder="Email or Mobile Number" id="email" required>
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="input-group">
+                <input type="password" placeholder="Password" id="password" required>
+                <span class="error" id="passwordError"></span>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+
+        
+        <p class="or">or</p>
+
+        <a href="#" class="forgot-password">Forgot Password</a>
+       
+        <div class="signup-container">
+            <p>Don't have an account? <a href="Signup">Sign up</a></p>
+        </div>
+    </div>
+</body>
+</html>

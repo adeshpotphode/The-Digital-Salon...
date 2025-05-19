@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Glamour Salon - Website</title>
+</head>
+<body>
+    <a href="AdminPage"><button style="background-color: #007BFF; margin: 10px; padding: 10px;">Go to Admin page</button></a>
+    <div class="header">
+        <h3 class="head">All Academy Inquiries List</h3>
+        <table border="2px">
+            <thead>
+                <tr>
+                    <th>firstName</th>
+                    <th>lastName</th>
+                    <th>contacts</th>
+                    <th>email</th>
+                    <th>city</th>
+                    <th>Address</th>
+                    <th>inquiry</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="inquiries:${allInquiriesList}">
+                    <td th:text="${inquiries.firstName}"></td>
+                    <td th:text="${inquiries.lastName}"></td>
+                    <td th:text="${inquiries.contacts}"></td>
+                    <td th:text="${inquiries.email}"></td>
+                    <td th:text="${inquiries.city}"></td>
+                    <td th:text="${inquiries.Address}"></td>
+                    <td th:text="${inquiries.massage}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

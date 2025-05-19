@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Glamour Salon - Website</title>
+    <link rel="stylesheet" href="/2ndbean/shopping.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- ----- = = = = = = = header = = =  = = = ----- -->
+    <nav>
+        <div class="logo">
+            <a href="/"><img src="/img/logo.png" alt="image not found"></a>
+            <h2>The Glamour Salon <span><br> hair & Beauty</span></h2>
+        </div>
+            
+        
+        <ul>
+            <li><a href="Services">SERVICES</a></li>
+            <li><a href="Academy">ACADEMY</a></li>
+            <li><a href="Franchise">FRANCHISE</a></li>
+        </ul>
+        <div>
+            <a href="Appointment" class="shop">Contact US - Booking Seat</a>
+            <a href="Shop" class="shop" target="_blank" rel="noopener noreferrer">Salon Product - Shop Now</a>
+        </div>
+    </nav><!-- ----- = = = = = = = header = = =  = = = ----- -->
+
+    <div class="offer">
+        <h3>Get up to ₹ 300 off</h3>
+    </div>
+
+    <!-- = = = = = = = e-shop-header = = = = =  -->
+    <div class="e-shop-header">
+        <div class="e-shop-logo">
+            <img src="/img/e-shop-logo.png" alt="image not found">
+            <div>
+            <h3>The Glamour Salon <span>hair & Beauty</span> </h3> 
+            <h4>E-Shopping Portal</h4>
+            </div>
+        </div>
+
+        <div class="e-shop-login-cart">
+            <a href="Login"><i class="fa-solid fa-user"></i>Login</a>
+            <a href="#"><i class="fa-solid fa-cart-plus"></i>Cart</a>
+        </div>
+    </div> <!-- = = = = e-shop-header = = = =  -->
+
+    
+
+    <div class="list">
+        <ul>
+            <li><a href="#Combs">Combs</a></li>
+            <li><a href="#Shears">Scissors</a></li>
+            <li><a href="#Hair-curlers">Hair Curlers</a></li>
+            <li><a href="#Hair-straighteners">Hair Straighteners</a></li>
+            <li><a href="#Hair-Dryer">Hair Dryer</a></li>
+            <li><a href="#Shampoo">Shampoo</a></li>
+            <li><a href="#Conditioner">Conditioner</a></li>
+            <li><a href="#Gel">Gel</a></li>
+            <li><a href="#Mirrors">Mirrors</a></li>
+            <li><a href="#Hair-color">Hair Color</a></li>
+            <li><a href="#Brushes">Brushes</a></li>
+            <li><a href="#Trimmer">Trimmer</a></li>
+            <li><a href="#Razor">Razor</a></li>
+            <li><a href="#Pedicure">Pedicure & Manicures Kit</a></li>
+        </ul>
+    </div>
+
+
+    <div class="container">
+        <!-- Shop Page -->
+        <div id="shop-page" class="page active">
+            <!-- <h2>Our Products</h2> -->
+                <div class="products-grid" id="products-container">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Buy Page -->
+        <div id="buy-page" class="page">
+            <button class="back-button" onclick="showPage('shop-page')">← Back to Shop</button>
+            <div id="product-detail">
+                <!-- Product details will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product data with descriptions
+        const products = [
+            {
+                id: 'p001',
+                name: 'Combs',
+                price: 129.99,
+                image: 'img/combs.jpg',
+                description: 'Premium quality combs designed for smooth, effortless styling. Perfect for all hair types, anti-static, durable, and lightweight — a must-have for personal grooming or salon use.'
+            },
+            {
+                id: 'p002',
+                name: 'Gel',
+                price: 109.99,
+                image: 'img/Gel.jpg',
+                description: 'Strong-hold hair gel for all-day styling. Non-sticky, alcohol-free formula that gives your hair a shiny, wet look without flakes. Suitable for all hair types.'
+            },
+            {
+                id: 'p003',
+                name: 'Hair Curlers',
+                price: 149.99,
+                image: 'img/hair-curlers.jpg',
+                description: 'Professional-grade hair curlers to create long-lasting curls and waves. Heats up quickly and evenly, with adjustable temperature settings and ceramic coating for hair protection.'
+            },
+            {
+                id: 'p004',
+                name: 'Trimmer',
+                price: 699.99,
+                image: 'img/trimmer.jpg',
+                description: 'Rechargeable hair trimmer with sharp stainless steel blades for precise cutting. Perfect for beard, mustache, and hair trimming. Ergonomic grip and long battery life.'
+            },
+            {
+                id: 'p005',
+                name: 'Hair Straighteners',
+                price: 1599.99,
+                image: 'img/hair-straighteners.jpg',
+                description: 'Advanced ceramic hair straighteners for smooth, frizz-free results. Heats up in seconds with temperature control and auto shut-off for safety. Suitable for all hair types.'
+            },
+            {
+                id: 'p006',
+                name: 'Hair Dryer',
+                price: 2599.99,
+                image: 'img/hair-dyer.jpg',
+                description: 'Powerful hair dryer with ionic technology to reduce frizz and enhance shine. Multiple speed and heat settings with a cool shot feature for long-lasting styles.'
+            },
+            {
+                id: 'p007',
+                name: 'Shears and Scissors',
+                price: 734.99,
+                image: 'img/shear.jpg',
+                description: 'Professional salon shears and scissors made from stainless steel for precision cutting. Comfortable grip and sharp blades ideal for trimming and shaping.'
+            },
+            {
+                id: 'p008',
+                name: 'Conditioner',
+                price: 599.99,
+                image: 'img/conditioner.jpg',
+                description: 'Nourishing hair conditioner that restores moisture and softness. Enriched with natural oils to strengthen and detangle hair, leaving it smooth and shiny.'
+            },
+            {
+                id: 'p009',
+                name: 'Mirrors',
+                price: 499.99,
+                image: 'img/Mirrors.jpg',
+                description: 'High-quality salon mirror with clear reflection and sleek frame. Ideal for makeup, grooming, and hairstyling. Durable, lightweight, and easy to clean.'
+            },
+            {
+                id: 'p010',
+                name: 'Shampoo',
+                price: 199.99,
+                image: 'img/shampoo.jpg',
+                description: 'Gentle yet effective shampoo that cleanses and nourishes hair. Enriched with vitamins and natural extracts to promote healthy, shiny, and strong hair.'
+            },
+            {
+                id: 'p011',
+                name: 'Brush',
+                price: 299.99,
+                image: 'img/brushes.jpg',
+                description: 'Soft-bristle hair brush designed to detangle and smooth hair with ease. Ideal for all hair types. Reduces breakage and adds shine while styling.'
+            },
+            {
+                id: 'p012',
+                name: 'Razor',
+                price: 99.99,
+                image: 'img/Ustra.jpg',
+                description: 'High-quality razor for precise shaving and trimming. Made from stainless steel for durability and safety. Suitable for all skin types and hair types.'
+            },
+            {
+                id: 'p013',
+                name: 'Hair Color',
+                price: 299.99,
+                image: 'img/hair-colors.jpg',
+                description: 'Vibrant and long-lasting hair color that nourishes as it colors. Ammonia-free formula with natural oils to give your hair shine, softness, and healthy look.'
+            },
+            {
+                id: 'p014',
+                name: 'Pedicure & Manicures Kit',
+                price: 999.99,
+                image: 'img/padicure.jpg',
+                description: 'Complete pedicure and manicure kit including nail cutter, filer, buffer, cuticle remover, and more. Ideal for salon use or personal grooming at home.'
+            },
+            {
+                id: 'p015',
+                name: 'Nail Polish',
+                price: 299.99,
+                image: 'img/nail-polish.webp',
+                description: 'High-pigment, quick-dry nail polish with long-lasting shine. Available in a variety of trendy colors. Chip-resistant formula for perfect salon-like finish.'
+            },
+            {
+                id: 'p016',
+                name: 'Foundation makeup',
+                price: 599.99,
+                image: 'img/Foundation-makeup.webp',
+                description: 'Lightweight foundation with full coverage and matte finish. Blends seamlessly into the skin and stays fresh for hours. Suitable for all skin tones.'
+            }
+        ];
+
+        // Selected product and quantity
+        let selectedProduct = null;
+        let quantity = 1;
+
+        // Show page function
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Reset quantity when going back to shop
+            if (pageId === 'shop-page') {
+                quantity = 1;
+            }
+        }
+
+        // Load product details on buy page
+        function loadProductDetails(productId) {
+            // Find product by ID
+            selectedProduct = products.find(product => product.id === productId);
+            
+            if (selectedProduct) {
+                // Get product detail container
+                const productDetailContainer = document.getElementById('product-detail');
+                
+                // Set product detail HTML
+                productDetailContainer.innerHTML = `
+                    <div class="product-detail">
+                        <div class="product-detail-image">
+                            <img src="${selectedProduct.image}" alt="${selectedProduct.name}" style="width: 400px; height: 350px;">
+                        </div>
+                        <div class="product-detail-info">
+                            <h1 class="product-detail-title">${selectedProduct.name}</h1>
+                            <p class="product-detail-price">₹${selectedProduct.price.toFixed(2)}</p>
+                            <div class="product-description">${selectedProduct.description}</div>
+                            
+                            <div class="quantity-selector">
+                                <span>Quantity: </span>
+                                <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                                <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="99" onchange="updateQuantity(this.value)">
+                                <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                            </div>
+                            
+                            <div class="buy-options">
+                                <button class="add-to-cart-button" onclick="addToCart()">Add to Cart</button>
+                                <button class="checkout-button" onclick="checkout()">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Show buy page
+                showPage('buy-page');
+            }
+        }
+
+        // Change quantity function
+        function changeQuantity(amount) {
+            const quantityInput = document.getElementById('quantity');
+            quantity = parseInt(quantityInput.value) + amount;
+            
+            // Make sure quantity is at least 1
+            if (quantity < 1) {
+                quantity = 1;
+            }
+            
+            // Update input value
+            quantityInput.value = quantity;
+        }
+
+        // Update quantity when manually changed
+        function updateQuantity(value) {
+            quantity = parseInt(value);
+            if (isNaN(quantity) || quantity < 1) {
+                quantity = 1;
+                document.getElementById('quantity').value = 1;
+            }
+        }
+
+        // Add to cart function
+        function addToCart() {
+            if (selectedProduct) {
+                alert(`Added ${quantity} ${selectedProduct.name}(s) to cart!`);
+                // In a real app, we would store this in a cart array
+            }
+        }
+
+        // Checkout function
+        function checkout() {
+            if (selectedProduct) {
+                const productName = encodeURIComponent(selectedProduct.name);
+                const unitPrice = selectedProduct.price;
+                const redirectUrl = `buy?product=${productName}&quantity=${quantity}&price=${unitPrice}`;
+                window.location.href = redirectUrl;
+            }
+        }
+
+        // Load products on page load
+        window.onload = function() {
+            const productsContainer = document.getElementById('products-container');
+            
+            // Clear products container
+            productsContainer.innerHTML = '';
+            
+            // Add each product to the grid
+            products.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.className = 'product-card';
+                productElement.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}" style="width: 250px; height: 220px;">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-price">₹${product.price.toFixed(2)}</p>
+                        <button onclick="loadProductDetails('${product.id}')" class="buy-button">Buy Now</button>
+                    </div>
+                `;
+                productsContainer.appendChild(productElement);
+            });
+        };
+    </script>
+
+    <!-- = = = = = = = = = = FOOTER = = = = = = = = = = -->
+    <footer class="footer" id="ab">
+        <div class="footer-container">
+            
+            <div class="footer-info">
+                <h3>About Us</h3>
+                <p>We take care of hair and skin like a baby, giving extra confidence and some more attitude</p>
+                <h3 class="footer__title">Information</h3>
+                <p>Services
+                <br>Academy 
+                <br>Franchise
+                <br>E-appointment
+                <br>E-Shopping
+                <br>Terms and conditions 
+                <br>Privacy policy</p>  
+            </div>
+            <div class="footer-contact">
+                <h3>Address</h3>
+                <p>123, The Glamour Salon, Vijay Nagar, Indore</p>
+                <h3>Contact Us</h3>
+                <p>Phone: (0731) 456-7890</p>
+                <p>Mobile: +91 012 345 6789</p>
+                <p>Email: <a href="mailto:info@theGlamourSalon.com">info@TheGlamourSalon.com</a></p>
+                <div class="our-top-services">
+                    <h3>Our Top Services</h3>
+                    <div class="our-top-services-images">
+                        <div>
+                            <img src="/img/footer-hair.jpeg" alt="image not found">
+                            <h5>Hair</h5>
+                        </div>
+                        <div>
+                            <img src="/img/footer-beauty.jpg" alt="image not found">
+                            <h5>Beauty</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <div class="footer-newsletter">
+                    <form action="#" method="post">
+                        <h3>Newsletter</h3>
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="#facebook.com"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="#twitter.com"><i class="fa-brands fa-square-twitter"></i></a></li>
+                    <li><a href="#youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="#instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
+                <h3>Mobile apps</h3>
+                <ul class="social-icons">
+                    <li><a href="#playstore.com"><i class="fa-brands fa-google-play"></i></a></li>
+                    <li><a href="#appstore.com"><i class="fa-brands fa-apple"></i></a></li>
+                </ul>
+            </div>
+        </div>     <!-- class="footer-container" -->
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 The The Glamour Salon hair & Beauty. All rights reserved.</p>
+        </div>
+     </footer>
+</body>
+</html>

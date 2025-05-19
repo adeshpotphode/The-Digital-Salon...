@@ -1,0 +1,79 @@
+/* General styling for the body */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+.for-admin{
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #007BFF;
+}
+
+.header {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Styling for the title */
+.head {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Styling for the 'Add New' link */
+.head2 {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    /* float: right; */
+}
+
+/* Table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f8f8f8;
+    color: #333;
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table td a {
+    margin-right: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.table td a:hover {
+    text-decoration: underline;
+}
