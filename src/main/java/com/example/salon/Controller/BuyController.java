@@ -24,18 +24,18 @@ public class BuyController {
     @GetMapping("/Shop")
     public String shop()
     {
-        return "/2ndbean/shopping";
+        return "2ndbean/shopping";
     }
 
     @GetMapping("/Login")
     public String login()
     {
-        return "/2ndbean/login";
+        return "2ndbean/login";
     }
     @GetMapping("/Signup")
     public String signup()
     {
-        return "/2ndbean/signup";
+        return "2ndbean/signup";
     }
 
 

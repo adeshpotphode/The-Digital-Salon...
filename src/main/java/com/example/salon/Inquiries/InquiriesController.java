@@ -21,7 +21,7 @@ public class InquiriesController {
     {
         Inquiries inquiries = new Inquiries();
         model.addAttribute("inquiries", inquiries);
-        return "/1stbean/academy";
+        return "1stbean/academy";
     }
 
 
@@ -37,7 +37,7 @@ public class InquiriesController {
     public String data(Model model)
     {
         model.addAttribute("allInquiriesList", is.getAllInquiries());
-        return "/1stbean/inquirieslist";
+        return "1stbean/inquirieslist";
     }
 
 
@@ -48,7 +48,7 @@ public class InquiriesController {
     {
         Inquiries franchise = new Inquiries();
         model.addAttribute("franchise", franchise);
-        return"/1stbean/franchise";
+        return"1stbean/franchise";
     }
 
     @PostMapping("/SaveFranchise")
@@ -62,7 +62,7 @@ public class InquiriesController {
     public String datafranchise(Model model)
     {
         model.addAttribute("allfranchiseList", is.getAllfranchise());
-        return "/1stbean/franchiselist";
+        return "1stbean/franchiselist";
     }
 
 }

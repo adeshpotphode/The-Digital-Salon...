@@ -26,7 +26,7 @@ public class SalonController {
     @GetMapping("/AdminPage")
     public String admin()
     {
-        return"/1stbean/admin";
+        return"1stbean/admin";
     }
 
     
@@ -35,14 +35,14 @@ public class SalonController {
     public String data(Model model)
     {
         model.addAttribute("allSalonList", ss.getAllSalon());
-        return "/1stbean/appointmentlist";
+        return "1stbean/appointmentlist";
     }
 
 
     @GetMapping("/Services")
     public String service()
     {
-        return"/1stbean/services";
+        return"1stbean/services";
     }
 
 
@@ -66,7 +66,7 @@ public class SalonController {
     {
         Salon salon = ss.getById(id);
         model.addAttribute("salon", salon);
-        return "/1stbean/update";
+        return "1stbean/update";
     }
 
     @GetMapping("/Delete/{id}")
