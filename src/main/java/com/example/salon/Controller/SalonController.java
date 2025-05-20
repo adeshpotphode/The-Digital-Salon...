@@ -20,7 +20,7 @@ public class SalonController {
     @GetMapping("/")
     public String index()
     {
-        return"/1stbean/index";
+        return"/index";
     }
 
     @GetMapping("/AdminPage")
