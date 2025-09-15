@@ -7,8 +7,60 @@
     <title>The Glamour Salon - Website</title>
 </head>
 <body>
+    <div class="header">
+  <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <a href="/"><img src="/img/logo.png" alt="image not found"></a>
+      <h2>The Glamour Salon <span><br> hair & Beauty</span></h2>
+    </div>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Nav Links -->
+    <ul id="nav-links">
+      <li><a href="Services">SERVICES</a></li>
+      <li><a href="Academy">ACADEMY</a></li>
+      <li><a href="Franchise">FRANCHISE</a></li>
+    </ul>
+
+    <!-- Buttons -->
+    <div class="actions">
+      <a href="Appointment" class="shop">Contact US - Booking Seat</a>
+      <a href="Shop" class="shop">Salon Product - Shop Now</a>
+    </div>
+  </nav>
+</div>
+
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+  const actions = document.querySelector(".actions");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    actions.classList.toggle("active");
+  });
+</script>
+
+<div class="AdminPage">
+    <h4>This Is Admin Page</h4>
+    <br>
+    <h5>Here You Can See The Book Appointment List, Franchise Inquiries List, Academy Inquiries List</h5>
+</div>
+
+<div class="adminButton">
     <a href="AppointmentListAdmin">Book Appointment List</a>
     <a href="FranchiseListAdmin">Franchise Inquiries List</a>
     <a href="InquiriesListAdmin">Academy Inquiries List</a>
+</div>
+
 </body>
 </html>

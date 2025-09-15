@@ -1,11 +1,11 @@
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
 }
 
-/* ======= HEADER ======= */
+/* = = = = = = =  header  = = = = = = = */
 nav {
     display: flex;
     justify-content: space-between;
@@ -155,7 +155,7 @@ nav .shop:hover {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translateY(-8px);
-}
+} 
 
 
 /* =========== Table section =========== */

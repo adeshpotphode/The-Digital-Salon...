@@ -1,27 +1,318 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    text-align: center;
-    padding: 50px;
 }
 
-/* Styling Links */
-a {
-    display: block;
-    width: 300px;
-    margin: 10px auto;
-    padding: 15px;
+/* ======= HEADER ======= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .logo img {
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+    height: 70px;
+}
+
+nav .logo h2 {
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.2;
+}
+
+nav .logo h2 span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* Nav Links */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Buttons */
+nav .actions {
+    display: flex;
+    gap: 10px;
+}
+
+nav .shop {
     background-color: #007bff;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav .shop:hover {
+    background-color: #0056b3;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
     transition: 0.3s;
 }
 
-a:hover {
-    background-color: #0056b3;
+/* ================= Responsive ================= */
+@media (max-width: 900px) {
+    body {
+        overflow-x: hidden;
+
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    /* Hide menu & actions initially */
+    nav ul,
+    nav .actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    /* Show when active */
+    nav ul.active,
+    nav .actions.active {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .actions {
+        margin-top: 10px;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Admin Page Styles */
+.AdminPage {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.AdminPage h4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.AdminPage h5 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Admin Buttons Container */
+.adminButton {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.adminButton a {
+    display: block;
+    padding: 18px 30px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    min-width: 200px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.adminButton a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.adminButton a:hover::before {
+    left: 100%;
+}
+
+.adminButton a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.adminButton a:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .AdminPage {
+        padding: 30px 15px;
+        margin-bottom: 20px;
+    }
+    
+    .AdminPage h4 {
+        font-size: 2rem;
+    }
+    
+    .AdminPage h5 {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .adminButton {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .adminButton a {
+        width: 100%;
+        max-width: 300px;
+        padding: 16px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .AdminPage h4 {
+        font-size: 1.8rem;
+    }
+    
+    .AdminPage h5 {
+        font-size: 0.9rem;
+    }
+    
+    .adminButton a {
+        padding: 14px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Optional: Body styling for complete look */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+/* Optional: Container wrapper */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Icon support (if you want to add icons later) */
+.adminButton a::after {
+    content: '→';
+    margin-left: 10px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.adminButton a:hover::after {
+    transform: translateX(5px);
 }

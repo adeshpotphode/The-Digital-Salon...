@@ -10,37 +10,64 @@
 <body>
    
         <!-- = = = = = = = = = = header = = = = = = = = = = -->
-        <nav>
-            <div class="logo">
-                <a href="/"><img src="/img/logo.png" alt="image not found"></a>
-                <h2>The Glamour Salon <span><br> hair & Beauty</span></h2>
-            </div>
-                
-            
-            <ul>
-                <li><a href="Services">SERVICES</a></li>
-                <li><a href="Academy">ACADEMY</a></li>
-                <li><a href="Franchise">FRANCHISE</a></li>
-            </ul>
-            <div>
-                <a href="Appointment" class="shop">Contact US - Booking Seat</a>
-                <a href="Shop" class="shop" target="_blank" rel="noopener noreferrer">Salon Product - Shop Now</a>
-            </div>
-        </nav>  <!-- = = = = = = = = = = header = = = = = = = = = = -->
+<div class="header">
+  <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <a href="/"><img src="/img/logo.png" alt="image not found"></a>
+      <h2>The Glamour Salon <span><br> hair & Beauty</span></h2>
+    </div>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Nav Links -->
+    <ul id="nav-links">
+      <li><a href="Services">SERVICES</a></li>
+      <li><a href="Academy">ACADEMY</a></li>
+      <li><a href="Franchise">FRANCHISE</a></li>
+    </ul>
+
+    <!-- Buttons -->
+    <div class="actions">
+      <a href="Appointment" class="shop">Contact US - Booking Seat</a>
+      <a href="Shop" class="shop">Salon Product - Shop Now</a>
+    </div>
+  </nav>
+</div>
+
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+  const actions = document.querySelector(".actions");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    actions.classList.toggle("active");
+  });
+</script> <!-- = = = = = = = = = = header = = = = = = = = = = -->
 
 
 
-        <!-- = = = = = = = = = = academy intro = = = = = = = = =  -->
-        <div class="academy-intro">
-            <div class="academy-img">
-                <img src="/img/academy1.png" alt="image not found">
-                <img src="/img/academy2.png" alt="image not found">
-            </div>
-            <div class="academy-msg">
-                <h4>Academy</h4>
-                <p>The Glamour Salon hair & Beauty Academy provides scientific and systematic training to aspiring stylists, so that they can excel in their careers and revolutionize the art of hairstyling, beauty and makeup in India with practical experience through its on-site salon.</p>
-            </div>
-        </div>
+<!-- = = = = = = = = = = academy intro = = = = = = = = =  -->
+<div class="academy-intro">
+    <div class="academy-img">
+        <img src="/img/academy1.png" alt="image not found">
+        <img src="/img/academy2.png" alt="image not found">
+    </div>
+    <div class="academy-msg">
+        <h4>Academy</h4>
+        <p>The Glamour Salon hair & Beauty Academy provides scientific and systematic training to aspiring stylists, 
+            so that they can excel in their careers and revolutionize the art of hairstyling, 
+            beauty and makeup in India with practical experience through its on-site salon.</p>
+    </div>
+</div>
 
 
         <!-- = = = = = = = = = academy-tag   = = = = = = = = = -->

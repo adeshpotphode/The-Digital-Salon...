@@ -8,24 +8,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <!-- ----- = = = = = = = header = = =  = = = ----- -->
-    <nav>
-        <div class="logo">
-            <a href="/"><img src="/img/logo.png" alt="image not found"></a>
-            <h2>The Glamour Salon <span><br> hair & Beauty</span></h2>
-        </div>
-            
-        
-        <ul>
-            <li><a href="Services">SERVICES</a></li>
-            <li><a href="Academy">ACADEMY</a></li>
-            <li><a href="Franchise">FRANCHISE</a></li>
-        </ul>
-        <div>
-            <a href="Appointment" class="shop">Contact US - Booking Seat</a>
-            <a href="Shop" class="shop" target="_blank" rel="noopener noreferrer">Salon Product - Shop Now</a>
-        </div>
-    </nav><!-- ----- = = = = = = = header = = =  = = = ----- -->
+<!-- ----- = = = = = = = header = = =  = = = ----- -->
+<div class="header">
+  <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <a href="/"><img src="/img/logo.png" alt="image not found"></a>
+      <h2>The Glamour Salon <span><br> hair & Beauty</span></h2>
+    </div>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Nav Links -->
+    <ul id="nav-links">
+      <li><a href="Services">SERVICES</a></li>
+      <li><a href="Academy">ACADEMY</a></li>
+      <li><a href="Franchise">FRANCHISE</a></li>
+    </ul>
+
+    <!-- Buttons -->
+    <div class="actions">
+      <a href="Appointment" class="shop">Contact US - Booking Seat</a>
+      <a href="Shop" class="shop">Salon Product - Shop Now</a>
+    </div>
+  </nav>
+</div>
+
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+  const actions = document.querySelector(".actions");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    actions.classList.toggle("active");
+  });
+</script><!-- ----- = = = = = = = header = = =  = = = ----- -->
+
 
     <div class="offer">
         <h3>Get up to ₹ 300 off</h3>

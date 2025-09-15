@@ -11,30 +11,54 @@
 <body>  
 
 
-        <!-- = = = = = = = = = = header = = = = = = = = = = -->
-        <nav>
-            <div class="logo">
-                <a href="/"><img src="/img/logo.png" alt="image not found"></a>
-                <h2>The Glamour Salon <span><br> hair & Beauty</span></h2>
-            </div>
-                
-            
-            <ul>
-                <li><a href="Services">SERVICES</a></li>
-                <li><a href="Academy">ACADEMY</a></li>
-                <li><a href="Franchise">FRANCHISE</a></li>
-            </ul>
-            <div>
-                <a href="Appointment" class="shop">Contact US - Booking Seat</a>
-                <a href="Shop" class="shop" target="_blank" rel="noopener noreferrer">Salon Product - Shop Now</a>
-            </div>
-        </nav><!-- = = = = = = = = = = header = = = = = = = = = = -->
+<!-- = = = = = = = = = = header = = = = = = = = = = -->
+<div class="header">
+  <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <a href="/"><img src="/img/logo.png" alt="image not found"></a>
+      <h2>The Glamour Salon <span><br> hair & Beauty</span></h2>
+    </div>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Nav Links -->
+    <ul id="nav-links">
+      <li><a href="Services">SERVICES</a></li>
+      <li><a href="Academy">ACADEMY</a></li>
+      <li><a href="Franchise">FRANCHISE</a></li>
+    </ul>
+
+    <!-- Buttons -->
+    <div class="actions">
+      <a href="Appointment" class="shop">Contact US - Booking Seat</a>
+      <a href="Shop" class="shop">Salon Product - Shop Now</a>
+    </div>
+  </nav>
+</div>
 
 
-        <div class="appointment-image">
-            <a href="#appointment"><h3>Book Appointment</h3></a>
-                
-        </div>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+  const actions = document.querySelector(".actions");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    actions.classList.toggle("active");
+  });
+</script>  <!-- = = = = = = = = = = header = = = = = = = = = = -->
+
+
+<div class="appointment-image">
+    <a href="#appointment"><h3>Book Appointment</h3></a>
+</div>
 
 
 <div class="container">
@@ -71,72 +95,72 @@
 </div>
 
 
-    <!-- = = = = = = = = = = FOOTER = = = = = = = = = = -->
-    <footer class="footer" id="ab">
-        <div class="footer-container">
+<!-- = = = = = = = = = = FOOTER = = = = = = = = = = -->
+<footer class="footer" id="ab">
+    <div class="footer-container">
             
-            <div class="footer-info">
-                <h3>About Us</h3>
-                <p>We take care of hair and skin like a baby, giving extra confidence and some more attitude</p>
-                <h3 class="footer__title">Information</h3>
-                <p>Services
-                <br>Academy 
-                <br>Franchise
-                <br>E-appointment
-                <br>E-Shopping
-                <br>Terms and conditions 
-                <br>Privacy policy</p>  
-            </div>
-            <div class="footer-contact">
-                <h3>Address</h3>
-                <p>123, The Glamour Salon, Vijay Nagar, Indore</p>
-                <h3>Contact Us</h3>
-                <p>Phone: (0731) 456-7890</p>
-                <p>Mobile: +91 012 345 6789</p>
-                <p>Email: <a href="mailto:info@theGlamourSalon.com">info@TheGlamourSalon.com</a></p>
-                <div class="our-top-services">
-                    <h3>Our Top Services</h3>
-                    <div class="our-top-services-images">
-                        <div>
-                            <img src="/img/footer-hair.jpeg" alt="image not found">
-                            <h5>Hair</h5>
-                        </div>
-                        <div>
-                            <img src="/img/footer-beauty.jpg" alt="image not found">
-                            <h5>Beauty</h5>
-                        </div>
+        <div class="footer-info">
+            <h3>About Us</h3>
+            <p>We take care of hair and skin like a baby, giving extra confidence and some more attitude</p>
+            <h3 class="footer__title">Information</h3>
+            <p>Services
+            <br>Academy 
+            <br>Franchise
+            <br>E-appointment
+            <br>E-Shopping
+            <br>Terms and conditions 
+            <br>Privacy policy</p>  
+        </div>
+        <div class="footer-contact">
+            <h3>Address</h3>
+            <p>123, The Glamour Salon, Vijay Nagar, Indore</p>
+            <h3>Contact Us</h3>
+            <p>Phone: (0731) 456-7890</p>
+            <p>Mobile: +91 012 345 6789</p>
+            <p>Email: <a href="mailto:info@theGlamourSalon.com">info@TheGlamourSalon.com</a></p>
+            <div class="our-top-services">
+                <h3>Our Top Services</h3>
+                <div class="our-top-services-images">
+                    <div>
+                        <img src="/img/footer-hair.jpeg" alt="image not found">
+                        <h5>Hair</h5>
+                    </div>
+                    <div>
+                        <img src="/img/footer-beauty.jpg" alt="image not found">
+                        <h5>Beauty</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="footer-social">
-                <div class="footer-newsletter">
-                    <form action="#" method="post">
-                        <h3>Newsletter</h3>
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
-                <h3>Follow Us</h3>
-                <ul class="social-icons">
-                    <li><a href="#facebook.com"><i class="fa-brands fa-square-facebook"></i></a></li>
-                    <li><a href="#twitter.com"><i class="fa-brands fa-square-twitter"></i></a></li>
-                    <li><a href="#youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
-                    <li><a href="#instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="#linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
-                </ul>
-                <h3>Mobile apps</h3>
-                <ul class="social-icons">
-                    <li><a href="#playstore.com"><i class="fa-brands fa-google-play"></i></a></li>
-                    <li><a href="#appstore.com"><i class="fa-brands fa-apple"></i></a></li>
-                </ul>
-            </div>
-        </div>     <!-- class="footer-container" -->
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 The The Glamour Salon hair & Beauty. All rights reserved.</p>
         </div>
-     </footer>
+
+        <div class="footer-social">
+            <div class="footer-newsletter">
+                <form action="#" method="post">
+                    <h3>Newsletter</h3>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="#facebook.com"><i class="fa-brands fa-square-facebook"></i></a></li>
+                <li><a href="#twitter.com"><i class="fa-brands fa-square-twitter"></i></a></li>
+                <li><a href="#youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+            <h3>Mobile apps</h3>
+            <ul class="social-icons">
+                <li><a href="#playstore.com"><i class="fa-brands fa-google-play"></i></a></li>
+                <li><a href="#appstore.com"><i class="fa-brands fa-apple"></i></a></li>
+            </ul>
+        </div>
+    </div>     <!-- class="footer-container" -->
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 The The Glamour Salon hair & Beauty. All rights reserved.</p>
+    </div>
+ </footer>
 
 
 

@@ -10,13 +10,7 @@ body {
     color: #ada7a7;
 }
 /* = = = = = = =  header = = = = = = = = */
-.header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    /* z-index: 1000; */
-}
+/* ======= HEADER ======= */
 nav {
     display: flex;
     justify-content: space-between;
@@ -24,38 +18,41 @@ nav {
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
-    font-family: sans-serif;
+    position: relative;
 }
 
 nav .logo {
     display: flex;
     align-items: center;
-    gap: 10px; 
+    gap: 10px;
 }
 
-nav .logo img{
+nav .logo img {
     border: 1px solid black;
     border-radius: 50%;
     background-color: white;
-    height: 80px;
+    height: 70px;
 }
 
-nav .logo  h2 {
-    margin-top: 15px;
-    font-weight: 400;
+nav .logo h2 {
+    font-weight: 500;
     color: #fff;
+    line-height: 1.2;
 }
 
 nav .logo h2 span {
     font-size: 16px;
     font-weight: 400;
+    color: #fff;
 }
 
+/* Nav Links */
 nav ul {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
 }
 
 nav ul li {
@@ -63,7 +60,6 @@ nav ul li {
 }
 
 nav ul li a {
-    justify-content: space-between;
     text-decoration: none;
     color: #fff;
     font-size: 16px;
@@ -71,23 +67,100 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #007BFF;
+    color: #007bff;
+}
+
+/* Buttons */
+nav .actions {
+    display: flex;
+    gap: 10px;
 }
 
 nav .shop {
-    margin-left: 40px;
-    background-color: #007BFF; 
+    background-color: #007bff;
     padding: 8px 16px;
     border-radius: 20px;
     color: #fff;
     cursor: pointer;
+    text-decoration: none;
     transition: background-color 0.3s;
 }
 
 nav .shop:hover {
-    background-color: #007BFF;
-} 
+    background-color: #0056b3;
+}
 
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 900px) {
+    body {
+        overflow-x: hidden;
+
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    /* Hide menu & actions initially */
+    nav ul,
+    nav .actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    /* Show when active */
+    nav ul.active,
+    nav .actions.active {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .actions {
+        margin-top: 10px;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
 /* ====== intro video ===== */
 .ser_intro{
     width: 80%;
@@ -124,6 +197,12 @@ nav .shop:hover {
     color: #007BFF;
 }
 
+@media (max-width: 900px) {
+    .para {
+        padding: 0 20px;
+    }
+}
+/* = = = = = = = services-font = = = = = = = */
 .services-font {
     text-align: center;
     padding: 50px;
@@ -136,6 +215,13 @@ nav .shop:hover {
     font-weight: bold;
     color: #dad7d6;
     text-shadow: 3px 3px 0 #a29797, 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+    .services-font h4 {
+        font-size: 60px;
+    }
+    
 }
 
 .section-font-list {
@@ -177,6 +263,7 @@ nav .shop:hover {
     color: #007BFF;
     font-weight: bold;
 }
+
 
 
 /* = = = = = = services = = = = = */
@@ -305,6 +392,12 @@ nav .shop:hover {
     text-align: justify;
 }
 
+@media (max-width: 900px) {
+    .Bridal-Services {
+        display: none;
+    }
+}
+
 .Bridal-artist {
     width: 80%;
     margin: auto;
@@ -338,6 +431,12 @@ nav .shop:hover {
     color: #000;
     font-size: 16px;
     line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .Bridal-artist {
+        display: none;
+    }
 }
 
 
@@ -483,4 +582,128 @@ nav .shop:hover {
 .footer-bottom p {
     font-weight: 300;
     color: white;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 30px 15px;
+        margin-top: 100px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info,
+    .footer-contact,
+    .footer-social {
+        text-align: center;
+        min-width: unset;
+        margin: 20px 0;
+    }
+
+    .footer-info h3,
+    .footer-contact h3,
+    .footer-social h3 {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .footer .footer-container
+    .footer-social {
+        padding: auto;
+    }
+
+    .footer-newsletter input {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .footer-newsletter button {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .our-top-services {
+        text-align: center;
+    }
+
+    .our-top-services-images {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .our-top-services-images img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Tablet Responsive Styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .footer-container {
+        gap: 15px;
+    }
+
+    .footer-info,
+    .footer-contact,
+    .footer-social {
+        min-width: 220px;
+    }
+
+    .footer-newsletter input {
+        max-width: 250px;
+    }
+
+    .our-top-services-images img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 20px 10px;
+    }
+
+    .footer-info h3,
+    .footer-contact h3,
+    .footer-social h3 {
+        font-size: 14px;
+    }
+
+    .footer-info p,
+    .footer-contact p {
+        font-size: 14px;
+    }
+
+    .social-icons li {
+        font-size: 20px;
+    }
+
+    .our-top-services {
+        display: none;
+    }
+
+    .our-top-services-images img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .our-top-services h5 {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        font-size: 0.8em;
+    }
 }
