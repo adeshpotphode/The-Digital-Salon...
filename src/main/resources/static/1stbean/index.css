@@ -146,6 +146,21 @@ nav .shop:hover {
     }
 }
 
+@media (max-width: 480px){
+    nav .logo img {
+        width: 60px;
+        height: auto;
+    }
+    nav .logo h2 {
+        font-size: 18px;
+        line-height: 20px;
+        margin-top: 12px;
+    }
+    nav .logo span {
+    font-size: 8px; 
+  }
+}
+
 /* Hamburger animation when active */
 .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translateY(8px);
@@ -158,6 +173,8 @@ nav .shop:hover {
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translateY(-8px);
 }
+
+
 
 
 /* =========== intro video ========== */
